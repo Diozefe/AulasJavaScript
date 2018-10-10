@@ -46,17 +46,18 @@
 	}
 	function dividir() {
 		
-		if(n1.value != '0' && n2.value != '0'){
+		
 			
 			var resultado = parseInt(n1.value) / parseInt(n2.value)
 			
-				if (isNaN(resultado) == false){
+				if (isNaN(resultado) || !isFinite(resultado)){
 				alert("O valor Não é Valido! \n Tente Outro Valor")
-				} else{
-					tag_resultado.textContent = resultado
-					return false
+				return 
 				}
-			} 
+					tag_resultado.textContent = resultado
+					
+				
+			 
 			
 	}
 </script>
