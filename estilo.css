@@ -1,0 +1,34 @@
+html {
+	background: #3452;
+	font-family: Arial;
+}
+body {
+	width: 500px;
+	margin: 0 auto;
+}
+h1 {
+	text-align: center;
+	font-size: 70px;
+	text-shadow: 0 5px blue;
+}
+.caixa-numero{
+	margin: 10px;
+}
+label {
+	font-size: 18px;
+}
+.resultado{
+	font-size: 24px;
+	background: #346583;
+	
+}
+button{
+	border-radius: 2px; 
+	background: #94bbdb;
+	padding: 7px;
+	box-shadow: 0 4px #664;
+}
+#n1, #n2{
+	padding: 10px;
+	border-radius: 4px;
+}

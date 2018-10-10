@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caululadora</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+ <h1> Calculadora</h1>
+ 	
+		<div class="caixa-numero"><label>Número 1:</label>
+			<!-- Campo n1 -->
+			<input id="n1" type="text" name="n1"><br/>
+		</div>
+		<div class="caixa-numero">	
+			<label>Número 2:</label>
+			<!-- Campo n2 -->
+			<input id="n2" type="text" name="n2">
+		</div> 
+		<div class="caixa-numero resultado">
+			Resultado: <span id="resultado"> </span>
+		</div>
+		<div>
+			<button onclick="somar()" class="botao">Somar</button>
+			<button class="botao">Subtrair</button>
+			<button class="botao">Multiplicar</button>
+			<button onclick="dividir()" class="botao">Dividir</button>
+		</div>
+	
+ 
+</body>
+<script type="text/javascript">
+	var n1 = document.querySelector('#n1')
+	var n2 = document.querySelector('#n2')
+	var tag_resultado = document.querySelector('#resultado')
+	
+	function somar() {
+		var resultado = parseInt(n1.value) + parseInt(n2.value)
+		tag_resultado.textContent = resultado
+		return false
+	}
+	function subtrair() {
+		
+	}
+	function multiplicar() {
+		
+	}
+	function dividir() {
+		
+		if(n1.value != '0' && n2.value != '0'){
+			
+			var resultado = parseInt(n1.value) / parseInt(n2.value)
+			
+				if (isNaN(resultado) == false){
+				alert("O valor Não é Valido! \n Tente Outro Valor")
+				} else{
+					tag_resultado.textContent = resultado
+					return false
+				}
+			} 
+			
+	}
+</script>
+
+</html>
