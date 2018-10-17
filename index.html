@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="sharcut icon" type="image/x-png" href="cal.png">
 	<title>Caululadora</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
@@ -20,10 +21,11 @@
 			Resultado: <span id="resultado"> </span>
 		</div>
 		<div>
-			<button onclick="somar()" class="botao">Somar</button>
-			<button class="botao">Subtrair</button>
-			<button class="botao">Multiplicar</button>
-			<button onclick="dividir()" class="botao">Dividir</button>
+			<button class="botao" id="somar">Somar</button>
+			<button class="botao" id="subtrair">Subtrair</button>
+			<button class="botao" id="multiplicar">Multiplicar</button>
+			<button class="botao" id="dividir">Dividir</button>
+			<button class="botao" id="limpar">C</button>
 		</div>
 	
  
@@ -32,34 +34,61 @@
 	var n1 = document.querySelector('#n1')
 	var n2 = document.querySelector('#n2')
 	var tag_resultado = document.querySelector('#resultado')
-	
-	function somar() {
+	document.querySelectorAll('input').forEach(function(input_html){
+		input_html.addEventListener('mousemove', function(evento){
+			var entrada_usuario = parseInt(evento.target.value)
+			if (isNaN(entrada_usuario) || !isFinite(entrada_usuario)) {
+				evento.target.style.background= 'aqua'
+			}
+		})
+		input_html.addEventListener('mouseleave', function(evento){
+			var entrada_usuario = parseInt(evento.target.value)
+			if (isNaN(entrada_usuario) || !isFinite(entrada_usuario)) {
+				evento.target.style.background = '#eee'
+			}
+		})
+	})
+	document.querySelector('#somar').addEventListener('click',function(){
 		var resultado = parseInt(n1.value) + parseInt(n2.value)
-		tag_resultado.textContent = resultado
-		return false
-	}
-	function subtrair() {
-		
-	}
-	function multiplicar() {
-		
-	}
-	function dividir() {
-		
-		
-			
-			var resultado = parseInt(n1.value) / parseInt(n2.value)
-			
 				if (isNaN(resultado) || !isFinite(resultado)){
 				alert("O valor Não é Valido! \n Tente Outro Valor")
 				return 
 				}
 					tag_resultado.textContent = resultado
-					
-				
-			 
-			
-	}
+	})
+	document.querySelector('#subtrair').addEventListener('click', function(){
+		var resultado = parseInt(n1.value) - parseInt(n2.value)
+				if (isNaN(resultado) || !isFinite(resultado)){
+				alert("O valor Não é Valido! \n Tente Outro Valor")
+				return 
+				}
+					tag_resultado.textContent = resultado
+	})
+	document.querySelector('#multiplicar').addEventListener('click', function(){
+		var resultado = parseInt(n1.value) * parseInt(n2.value)
+				if (isNaN(resultado) || !isFinite(resultado)){
+				alert("O valor Não é Valido! \n Tente Outro Valor")
+				return 
+				}
+					tag_resultado.textContent = resultado
+	})
+	document.querySelector('#dividir').addEventListener('click', function(){
+
+				var resultado = parseInt(n1.value) / parseInt(n2.value)
+				if (isNaN(resultado) || !isFinite(resultado)){
+				alert("O valor Não é Valido! \n Tente Outro Valor")
+				return 
+				}
+					tag_resultado.textContent = resultado
+	})
+	document.querySelector('#limpar').addEventListener('click',function(){
+		n1.value=''
+		n2.value=''
+		tag_resultado.textContent=''
+	})
+
+	
+	
 </script>
 
 </html>

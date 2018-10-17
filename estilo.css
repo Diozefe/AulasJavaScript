@@ -9,7 +9,7 @@ body {
 h1 {
 	text-align: center;
 	font-size: 70px;
-	text-shadow: 0 5px blue;
+	text-shadow: 0 5px rgb(59, 166, 228);
 }
 .caixa-numero{
 	margin: 10px;
